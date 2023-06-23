@@ -1,0 +1,63 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <title>
+            sign up
+        </title>
+        <link rel="stylesheet" href="sample.css">
+    </head>
+    <body>
+        <form action="https://sheetdb.io/api/v1/c1zd040fo9p53" method="post" id="sheetdb-form">
+            <div class="container">
+              <h1>Sign Up</h1>
+              <hr>
+          
+              <label for="email"><b>Email</b></label>
+              <input type="email" placeholder="email" name="data[email]" required>
+          <br>
+              <label for="user name"><b>user name</b></label>
+              <input type="text" placeholder="Enter user name" name="data[user name]" required>
+          <br>
+              <label for="password"><b>Password</b></label>
+              <input type="password" placeholder="Password" name="data[password]" required></label>
+              <br>
+
+            <label for="number"><b>Age</b></label>
+              <input type="number" placeholder="Enter Age" name="data[Age]" required>
+          <br>
+
+          <label for="text"><b>name</b></label>
+              <input type="text" type="text" placeholder="Enter your name" name="data[name]" required>
+          <br>
+
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+            
+              <br>
+              <br>
+          
+              <div class="clearfix">
+                <a href="index.html"><button type="button" class="cancelbtn" style="width: 20%;">Cancel</button></a>
+                <button type="submit" class="signupbtn" style="width: 20%;">Sign Up</button>
+            </div>
+              </div>
+            </div>
+          </form>
+
+<script>
+    var form= document.getElementById('sheetdb-form');
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        fetch(form.action, {
+            method : "POST",
+            body : new FormData(document.getElementById("sheetdb-form")),
+        }).then(
+            Response => Response.json()
+        ).then((HTMl) => {
+            window.open('login.html','_blank');
+        });
+    });
+</script>
+
+    </body>
+ </html>
